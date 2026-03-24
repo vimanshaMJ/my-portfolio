@@ -1,16 +1,13 @@
-import { siteConfig } from '../../data/portfolio';
-
-export default function Footer() {
-  const year = new Date().getFullYear();
+export default function Footer({ name }) {
   return (
-    <footer className="py-10 border-t border-stone-100">
-      <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-xs text-stone-400">
-          © {year} {siteConfig.name}. Built with Next.js & Tailwind CSS.
-        </p>
-        <p className="text-xs text-stone-400">
-          {siteConfig.location}
-        </p>
+    <footer className="footer">
+      <div className="container footer-inner">
+        <span className="footer-copy">© {new Date().getFullYear()} {name}. Built with Next.js.</span>
+        <nav className="footer-links">
+          <a href="#home">Top</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </footer>
   );

@@ -1,58 +1,40 @@
-import { siteConfig } from '../../data/portfolio';
-import SectionHeading from './ui/SectionHeading';
-
-export default function Contact() {
+export default function Contact({ data }) {
   return (
-    <section id="contact" className="py-24 border-t border-stone-100">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+    <section className="section" id="contact">
+      <div className="container">
+        <div className="sec-label">06 — Contact</div>
+        <h2 className="sec-title">Get in Touch</h2>
 
-          {/* Left: heading */}
-          <div>
-            <SectionHeading index="06" title="Contact" />
-            <p className="text-stone-400 text-sm mt-4 max-w-xs">
-              Have a project in mind or just want to connect? My inbox is open.
-            </p>
-          </div>
-
-          {/* Right: contact content */}
-          <div>
-            <p className="text-stone-600 text-[15px] leading-relaxed mb-8">
-              Whether you're looking for an AI/ML engineer, a full-stack developer, or just want to
-              chat about machine learning — I'm always happy to talk. Drop me an email and I'll get
-              back to you as soon as I can.
-            </p>
-
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-3 text-stone-900 text-lg font-medium border-b-2 border-stone-900 pb-1 hover:text-stone-500 hover:border-stone-500 transition-colors"
-            >
-              {siteConfig.email}
-              <span className="text-base">→</span>
-            </a>
-
-            {/* Social links */}
-            <div className="flex items-center gap-6 mt-10 pt-8 border-t border-stone-100">
-              {siteConfig.social.github && (
-                <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer"
-                  className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
-                  GitHub
+        <div className="contact-wrapper">
+          <div className="contact-info reveal">
+            <p>I'm currently open to new opportunities — whether it's a full-time role, freelance project, or just a conversation about AI and engineering. My inbox is always open.</p>
+            <div className="contact-links">
+              {data.links.map((l, i) => (
+                <a key={i} href={l.url} className="contact-link" target="_blank" rel="noopener noreferrer">
+                  <span>{l.icon}</span>
+                  <span>{l.label}</span>
                 </a>
-              )}
-              {siteConfig.social.linkedin && (
-                <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer"
-                  className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
-                  LinkedIn
-                </a>
-              )}
-              {siteConfig.social.twitter && (
-                <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer"
-                  className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
-                  Twitter
-                </a>
-              )}
+              ))}
             </div>
           </div>
+
+          <form className="contact-form reveal" onSubmit={e => e.preventDefault()}>
+            <div className="form-group">
+              <label className="form-label">Name</label>
+              <input className="form-input" type="text" placeholder="Your name" />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Email</label>
+              <input className="form-input" type="email" placeholder="your@email.com" />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Message</label>
+              <textarea className="form-textarea" placeholder="Tell me about your project..." />
+            </div>
+            <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              Send Message →
+            </button>
+          </form>
         </div>
       </div>
     </section>
