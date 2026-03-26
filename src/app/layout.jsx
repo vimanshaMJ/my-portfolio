@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Alex Perera — AI/ML Engineer & Full-Stack Developer',
+  title: 'Vimansha Jayarathna — AI/ML Engineer & Full-Stack Developer',
   description: 'Building intelligent systems — from model to production.',
 };
 

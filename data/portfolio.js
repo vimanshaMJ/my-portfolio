@@ -3,8 +3,9 @@
 // ─────────────────────────────────────────────────────
 
 export const hero = {
-  firstName: 'Alex',
-  lastName: 'Perera',
+  firstName: 'Vimansha',
+  lastName: 'Jayarathna',
+  photo: '/photo.jpg',
   title: 'AI/ML Engineer & Full-Stack Developer',
   location: 'Colombo, Sri Lanka',
   tagline: 'Building intelligent systems — from model training to production deployment.',

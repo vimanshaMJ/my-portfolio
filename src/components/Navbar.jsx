@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#" className="nav-logo">AP<span>.</span></a>
+        <a href="#" className="nav-logo">Vi<span>.</span></a>
         <ul className="nav-links">
           {['About','Skills','Experience','Projects','Blog','Contact'].map(s => (
             <li key={s}><a href={`#${s.toLowerCase()}`}>{s}</a></li>
